@@ -1,4 +1,4 @@
-/* || General setup */
+/* ===== General setup ===== */
 
 html, body {
   margin: 0;
@@ -16,7 +16,7 @@ body {
   margin: 0 auto;
 }
 
-/* || typography */
+/* ===== Typography ===== */
 
 h1, h2, h3 {
   font-family: 'Sonsie One', cursive;
@@ -49,7 +49,7 @@ p, li, table {
   line-height: 1.5;
 }
 
-/* || layout */
+/* ===== Layout ===== */
 
 nav, article, footer, .secondary {
   background-color: white;
@@ -59,6 +59,7 @@ article, footer, .secondary {
   padding: 10px 30px;
 }
 
+/* NAV (STRICT MDN STYLE) */
 nav {
   height: 50px;
   display: flex;
@@ -86,6 +87,7 @@ nav a {
   color: black;
 }
 
+/* search */
 nav .search {
   flex: 1;
   display: flex;
@@ -111,7 +113,7 @@ nav .search {
   color: white;
 }
 
-/* || main layout (IMPORTANT: keep simple like MDN) */
+/* ===== Main layout (IMPORTANT: keep simple) ===== */
 
 main {
   display: flex;
@@ -129,7 +131,7 @@ footer {
   margin-top: 10px;
 }
 
-/* Table */
+/* ===== Table ===== */
 
 table {
   width: 100%;
@@ -153,7 +155,7 @@ tbody tr:nth-child(odd) {
   background-color: #def;
 }
 
-/* media */
+/* ===== Media ===== */
 
 img, audio {
   display: block;
@@ -164,7 +166,7 @@ audio {
   width: 500px;
 }
 
-/* comments */
+/* ===== Comments ===== */
 
 .comments {
   background-color: #def;
