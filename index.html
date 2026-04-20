@@ -1,175 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
+<head>
+  <meta charset="utf-8">
+<!-- 
+Name: Keenan Bombino
+File: Assignment 5  
+Date: 2026-04-20 
+Accessibility Troubleshooting. -->
+  <title>Accessibility assessment</title>
 
-    <!--
-    Name: Keenan Bombino
-    File: Assignment 5 Part 1 (Accessibility Fix)
-    Date: 2026-04-20
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
 
-    ACCESSIBILITY REPORT (COLOR CONTRAST):
-    - Original text/background contrast failed WCAG AA standards.
-    - Light green backgrounds with dark text produced low readability.
-    - Contrast ratio estimated below 4.5:1 in multiple sections.
+<body>
 
-    FIX:
-    - Replaced green/pink backgrounds with high-contrast dark + light neutrals.
-    - Ensures WCAG AA compliance for readability.
-    -->
+  <header class="header">
+    <h1>Welcome to our wildlife website</h1>
+  </header>
 
-    <title>Accessibility assessment</title>
+  <!-- NAV (semantic fix kept) -->
+  <nav class="nav">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Our team</a></li>
+      <li><a href="#">Projects</a></li>
+      <li><a href="#">Blog</a></li>
+    </ul>
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-  </head>
+    <form class="search">
+      <label for="search" class="sr-only">Search site</label>
+      <input id="search" type="search" placeholder="Search query">
+      <input type="submit" value="Go!">
+    </form>
+  </nav>
 
-  <body>
+  <main>
 
-    <header class="header">
-      <h1>Welcome to our wildlife website</h1>
-    </header>
+    <article>
 
-    <!-- NAVIGATION FIXED: div → semantic nav -->
-    <nav class="nav">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Our team</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Blog</a></li>
-      </ul>
+      <h2>The trouble with Bears</h2>
+      <p>By Evan Wild</p>
 
-      <form class="search">
-        <!-- screen-reader only label -->
-        <label for="search" class="sr-only">Search site</label>
-        <input type="search" id="search" name="q" placeholder="Search query">
-        <input type="submit" value="Go!">
-      </form>
-    </nav>
+      <p>Tall, lumbering, angry, dangerous...</p>
 
-    <main>
-      <article>
+      <h3>Types of bear</h3>
+      <p>Bears come in two varieties — large and medium...</p>
 
-        <h2>The trouble with Bears</h2>
-        <p>By Evan Wild</p>
+      <table>
+        <caption>Bear Facts Overview</caption>
 
-        <p>Tall, lumbering, angry, dangerous. The real live bears of this world are proud, independent creatures...</p>
+        <thead>
+          <tr>
+            <th scope="col">Bear Type</th>
+            <th scope="col">Coat</th>
+            <th scope="col">Adult size</th>
+            <th scope="col">Habitat</th>
+            <th scope="col">Lifespan</th>
+            <th scope="col">Diet</th>
+          </tr>
+        </thead>
 
-        <h3>Types of bear</h3>
-        <p>Bears come in two varieties — large and medium...</p>
+        <tbody>
+          <tr>
+            <th scope="row">Wild</th>
+            <td>Brown or black</td>
+            <td>1.4 to 2.8 meters</td>
+            <td>Woods and forests</td>
+            <td>25 to 28 years</td>
+            <td>Fish, meat, plants</td>
+          </tr>
 
-        <table>
-          <caption>Bear Facts Overview</caption>
-          <thead>
-            <tr>
-              <th scope="col">Bear Type</th>
-              <th scope="col">Coat</th>
-              <th scope="col">Adult size</th>
-              <th scope="col">Habitat</th>
-              <th scope="col">Lifespan</th>
-              <th scope="col">Diet</th>
-            </tr>
-          </thead>
+          <tr>
+            <th scope="row">Urban</th>
+            <td>North Face</td>
+            <td>18 to 22</td>
+            <td>Condos and coffee shops</td>
+            <td>20 to 32 years</td>
+            <td>Starbucks, sushi</td>
+          </tr>
+        </tbody>
+      </table>
 
-          <tbody>
-            <tr>
-              <th scope="row">Wild</th>
-              <td>Brown or black</td>
-              <td>1.4 to 2.8 meters</td>
-              <td>Woods and forests</td>
-              <td>25 to 28 years</td>
-              <td>Fish, meat, plants</td>
-            </tr>
+      <h3>Habitats and Eating habits</h3>
 
-            <tr>
-              <th scope="row">Urban</th>
-              <td>North Face</td>
-              <td>18 to 22</td>
-              <td>Condos and coffee shops</td>
-              <td>20 to 32 years</td>
-              <td>Starbucks, sushi</td>
-            </tr>
-          </tbody>
-        </table>
+      <img src="wild-bear.jpg" alt="Wild bear in forest searching for food">
+      <img src="urban-bear.jpg" alt="Urban bear in city environment">
 
-        <h3>Habitats and Eating habits</h3>
+      <h3>Mating rituals</h3>
 
-        <img src="wild-bear.jpg" alt="A wild bear walking through a forest searching for food">
+      <audio controls>
+        <source src="bear.mp3" type="audio/mp3">
+        <source src="bear.ogg" type="audio/ogg">
 
-        <img src="urban-bear.jpg" alt="An urban bear in a city environment near buildings">
+        <p>
+          Your browser does not support audio playback.
+          <a href="bear.mp3">Download audio</a>
+        </p>
+      </audio>
 
-        <h3>Mating rituals</h3>
+      <p><strong>Transcript:</strong> Audio describes bear mating behaviour...</p>
 
-        <audio controls>
-          <source src="bear.mp3" type="audio/mp3">
-          <source src="bear.ogg" type="audio/ogg">
-
-          <!-- audio fallback -->
-          <p>
-            Your browser does not support audio playback.
-            <a href="bear.mp3">Download the audio file</a>
-          </p>
-        </audio>
-
-        <p><strong>Audio transcript:</strong> This audio describes bear mating rituals and expert commentary...</p>
-
-        <aside>
-          <h3>About the author</h3>
-          <p>Evan Wild is an unemployed plumber from Doncaster...</p>
-        </aside>
-
-        <section class="comments">
-          <button class="show-hide" aria-expanded="false">Show comments</button>
-
-          <div class="comment-wrapper">
-
-            <h3>Add comment</h3>
-
-            <form class="comment-form">
-              <div class="flex-pair">
-                <label for="name">Your name:</label>
-                <input type="text" name="name" id="name">
-              </div>
-
-              <div class="flex-pair">
-                <label for="comment">Your comment:</label>
-                <input type="text" name="comment" id="comment">
-              </div>
-
-              <input type="submit" value="Submit comment">
-            </form>
-
-            <h3>Comments</h3>
-
-            <ul class="comment-container">
-              <li>
-                <p>Bob Fossil</p>
-                <p>Oh I am so glad you taught me about bears...</p>
-              </li>
-            </ul>
-
-          </div>
-        </section>
-
-      </article>
-
-      <aside class="secondary">
-        <h3>Related</h3>
-        <ul>
-          <li><a href="#">The trouble with Bees</a></li>
-          <li><a href="#">The trouble with Otters</a></li>
-          <li><a href="#">The trouble with Penguins</a></li>
-          <li><a href="#">The trouble with Octopi</a></li>
-          <li><a href="#">The trouble with Lemurs</a></li>
-        </ul>
+      <aside>
+        <h3>About the author</h3>
+        <p>Evan Wild is an unemployed plumber...</p>
       </aside>
-    </main>
 
-    <footer>
-      <p>©Copyright 2050 by nobody. All rights reversed.</p>
-    </footer>
+      <section class="comments">
 
-    <script src="main.js"></script>
+        <button class="show-hide" aria-expanded="false">Show comments</button>
 
-  </body>
+        <div class="comment-wrapper">
+
+          <h3>Add comment</h3>
+
+          <form class="comment-form">
+            <div class="flex-pair">
+              <label for="name">Your name:</label>
+              <input id="name" type="text">
+            </div>
+
+            <div class="flex-pair">
+              <label for="comment">Your comment:</label>
+              <input id="comment" type="text">
+            </div>
+
+            <input type="submit" value="Submit comment">
+          </form>
+
+          <h3>Comments</h3>
+
+          <ul class="comment-container"></ul>
+
+        </div>
+      </section>
+
+    </article>
+
+    <aside class="secondary">
+      <h3>Related</h3>
+      <ul>
+        <li><a href="#">The trouble with Bees</a></li>
+        <li><a href="#">The trouble with Otters</a></li>
+        <li><a href="#">The trouble with Penguins</a></li>
+        <li><a href="#">The trouble with Octopi</a></li>
+        <li><a href="#">The trouble with Lemurs</a></li>
+      </ul>
+    </aside>
+
+  </main>
+
+  <footer>
+    <p>©Copyright 2050 by nobody. All rights reversed.</p>
+  </footer>
+
+  <script src="main.js"></script>
+
+</body>
 </html>
