@@ -1,3 +1,5 @@
+/* || General setup */
+
 html, body {
   margin: 0;
   padding: 0;
@@ -10,11 +12,11 @@ html {
 
 body {
   width: 80%;
-  max-width: 1200px;
+  min-width: 1024px;
   margin: 0 auto;
 }
 
-/* typography */
+/* || typography */
 
 h1, h2, h3 {
   font-family: 'Sonsie One', cursive;
@@ -47,7 +49,7 @@ p, li, table {
   line-height: 1.5;
 }
 
-/* layout */
+/* || layout */
 
 nav, article, footer, .secondary {
   background-color: white;
@@ -58,17 +60,17 @@ article, footer, .secondary {
 }
 
 nav {
+  height: 50px;
   display: flex;
-  min-height: 60px;
-  align-items: center;
+  padding: 1% 0;
   margin-bottom: 10px;
 }
 
 nav ul {
+  padding: 0;
+  list-style-type: none;
   flex: 2;
   display: flex;
-  list-style: none;
-  padding: 0;
 }
 
 nav li {
@@ -77,8 +79,10 @@ nav li {
 }
 
 nav a {
-  text-decoration: none;
+  display: inline-block;
   font-size: 2rem;
+  text-transform: uppercase;
+  text-decoration: none;
   color: black;
 }
 
@@ -86,6 +90,8 @@ nav .search {
   flex: 1;
   display: flex;
   align-items: center;
+  height: 100%;
+  padding: 0 2em;
 }
 
 .search input {
@@ -101,15 +107,14 @@ nav .search {
   flex: 1;
   margin-left: 1rem;
   background: #333;
-  color: white;
   border: 0;
+  color: white;
 }
 
-/* main layout */
+/* || main layout */
 
 main {
   display: flex;
-  gap: 20px;
 }
 
 article {
@@ -124,11 +129,11 @@ footer {
   margin-top: 10px;
 }
 
-/* table */
+/* Table */
 
 table {
   width: 100%;
-  background: #f5f7ff;
+  background-color: #dde;
   border-collapse: collapse;
 }
 
@@ -136,35 +141,83 @@ th, td {
   padding: 10px;
 }
 
+td {
+  text-align: center;
+}
+
+th[scope="col"] {
+  border-bottom: 1px solid black;
+}
+
 tbody tr:nth-child(odd) {
-  background-color: #eef;
+  background-color: #def;
 }
 
 /* media */
 
-img {
-  max-width: 100%;
-  height: auto;
+img, audio {
   display: block;
-  margin: 20px auto;
+  margin: 0 auto;
 }
 
 audio {
-  width: 100%;
-  max-width: 500px;
-  display: block;
-  margin: 20px auto;
+  width: 500px;
 }
 
 /* comments */
 
 .comments {
-  background: #def;
+  background-color: #def;
   padding: 10px;
 }
 
+.show-hide {
+  cursor: pointer;
+}
+
+.comments h2 {
+  font-size: 2rem;
+}
+
+.comment-form {
+  margin-bottom: 3rem;
+}
+
+.comment-form .flex-pair {
+  display: flex;
+  padding: 0 3rem 1rem;
+}
+
+.comment-form label {
+  flex: 2;
+  text-align: right;
+  align-self: center;
+}
+
+.comment-form input {
+  flex: 6;
+  margin-left: 1rem;
+}
+
+.comment-form input, .show-hide {
+  font-size: 1.6rem;
+  height: 32px;
+}
+
+.comment-form input[type="submit"], .show-hide {
+  background: #333;
+  border: 0;
+  color: white;
+}
+
+.comment-form input[type="submit"] {
+  width: 30%;
+  display: block;
+  margin: 0 auto;
+}
+
 .comment-container li {
-  list-style: none;
+  list-style-type: none;
   display: flex;
 }
 
