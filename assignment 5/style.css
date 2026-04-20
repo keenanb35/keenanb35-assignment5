@@ -1,5 +1,3 @@
-/* || General setup */
-
 html, body {
   margin: 0;
   padding: 0;
@@ -7,64 +5,37 @@ html, body {
 
 html {
   font-size: 10px;
-  background-color: #f4f4f4;
+  background-color: #dde;
 }
 
 body {
   width: 80%;
   min-width: 1024px;
   margin: 0 auto;
-  background-color: white;
+  background: white;
 }
 
-/* || typography */
-
-h1, h2, h3 {
-  font-family: 'Sonsie One', cursive;
-  color: #1a1a1a;
-}
-
-p, input, li, table, label {
-  font-family: 'Open Sans Condensed', sans-serif;
-  color: #222;
-}
-
-h1 {
-  font-size: 4rem;
-  text-align: center;
-  color: white;
+/* HEADER */
+.header {
   background: #222;
+  color: white;
+  text-align: center;
   padding: 20px;
+  font-family: 'Sonsie One', cursive;
 }
 
-h2 {
-  font-size: 3rem;
-}
-
-h3 {
-  font-size: 2.2rem;
-}
-
-p, li, table {
-  font-size: 1.6rem;
-  line-height: 1.5;
-}
-
-/* || nav layout (semantic nav now) */
-
+/* NAV */
 .nav {
-  height: 60px;
-  background-color: #222;
   display: flex;
-  padding: 1% 0;
+  background: #444;
   margin-bottom: 10px;
 }
 
 .nav ul {
-  padding: 0;
-  list-style-type: none;
-  flex: 2;
   display: flex;
+  list-style: none;
+  flex: 2;
+  padding: 0;
 }
 
 .nav li {
@@ -73,102 +44,65 @@ p, li, table {
 }
 
 .nav a {
-  font-size: 1.8rem;
-  text-transform: uppercase;
-  text-decoration: none;
   color: white;
+  font-size: 1.6rem;
+  text-decoration: none;
 }
 
 .nav .search {
   flex: 1;
   display: flex;
   align-items: center;
-  padding: 0 2em;
 }
 
-/* || layout */
-
+/* MAIN LAYOUT */
 main {
   display: flex;
 }
 
 article {
   flex: 5;
-  padding: 10px 30px;
+  padding: 10px;
 }
 
 .secondary {
   flex: 2;
-  padding: 10px 30px;
-}
-
-footer {
-  margin-top: 10px;
-  text-align: center;
   padding: 10px;
-  background: #222;
-  color: white;
 }
 
-/* table */
-
+/* TABLE */
 table {
   width: 100%;
   border-collapse: collapse;
 }
 
 th, td {
+  border: 1px solid #ccc;
   padding: 10px;
-  text-align: center;
-  border-bottom: 1px solid #ccc;
 }
 
-tbody tr:nth-child(odd) {
-  background-color: #eee;
-}
-
-/* images */
-
-img, audio {
+/* IMAGES */
+img {
   display: block;
-  margin: 0 auto;
+  margin: 10px auto;
+  max-width: 100%;
 }
 
-/* comments */
-
+/* COMMENTS */
 .comments {
-  background-color: #eee;
+  background: #eee;
   padding: 10px;
 }
 
 .show-hide {
-  cursor: pointer;
   background: #222;
   color: white;
   border: none;
-  font-size: 1.6rem;
   padding: 10px;
+  cursor: pointer;
 }
 
-/* form */
-
-.comment-form .flex-pair {
-  display: flex;
-  padding: 0 3rem 1rem;
-}
-
-.comment-form label {
-  flex: 2;
-  text-align: right;
-}
-
-.comment-form input {
-  flex: 6;
-  margin-left: 1rem;
-}
-
-/* screen reader only */
-
+/* SCREEN READER ONLY */
 .sr-only {
   position: absolute;
   left: -10000px;
