@@ -1,43 +1,41 @@
-const showHideBtn = document.querySelector('.show-hide');
-const commentWrapper = document.querySelector('.comment-wrapper');
+const btn = document.querySelector('.show-hide');
+const wrapper = document.querySelector('.comment-wrapper');
 
-commentWrapper.style.display = 'none';
+wrapper.style.display = 'none';
 
-showHideBtn.addEventListener('click', toggleComments);
-showHideBtn.addEventListener('keydown', function(e) {
+function toggle() {
+  const hidden = wrapper.style.display === 'none';
+
+  wrapper.style.display = hidden ? 'block' : 'none';
+  btn.textContent = hidden ? 'Hide comments' : 'Show comments';
+  btn.setAttribute('aria-expanded', hidden);
+}
+
+btn.addEventListener('click', toggle);
+
+btn.addEventListener('keydown', (e) => {
   if (e.key === 'Enter' || e.key === ' ') {
-    toggleComments();
+    toggle();
   }
 });
 
-function toggleComments() {
-  const isHidden = commentWrapper.style.display === 'none';
-
-  commentWrapper.style.display = isHidden ? 'block' : 'none';
-  showHideBtn.textContent = isHidden ? 'Hide comments' : 'Show comments';
-  showHideBtn.setAttribute('aria-expanded', isHidden);
-}
-
-// comments form
 const form = document.querySelector('.comment-form');
-const nameField = document.querySelector('#name');
-const commentField = document.querySelector('#comment');
 const list = document.querySelector('.comment-container');
 
-form.onsubmit = function(e) {
+form.addEventListener('submit', (e) => {
   e.preventDefault();
 
-  const listItem = document.createElement('li');
-  const namePara = document.createElement('p');
-  const commentPara = document.createElement('p');
+  const li = document.createElement('li');
 
-  namePara.textContent = nameField.value;
-  commentPara.textContent = commentField.value;
+  const name = document.createElement('p');
+  const comment = document.createElement('p');
 
-  listItem.appendChild(namePara);
-  listItem.appendChild(commentPara);
-  list.appendChild(listItem);
+  name.textContent = document.querySelector('#name').value;
+  comment.textContent = document.querySelector('#comment').value;
 
-  nameField.value = '';
-  commentField.value = '';
-};
+  li.appendChild(name);
+  li.appendChild(comment);
+  list.appendChild(li);
+
+  form.reset();
+});
