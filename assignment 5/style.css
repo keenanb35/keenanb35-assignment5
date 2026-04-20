@@ -1,5 +1,7 @@
 /* ===== General setup ===== */
-
+body {
+  border: 10px solid red !important;
+}
 html, body {
   margin: 0;
   padding: 0;
